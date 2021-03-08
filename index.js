@@ -221,14 +221,22 @@ function createBoard() {
     return board;
 }
 document.addEventListener('keydown', (e) => { 
-    if (!(e.code == "ArrowUp" ||  e.code == "ArrowDown" || e.code == "ArrowLeft" || e.code == "ArrowRight")) return;
-    e.preventDefault();
-    if (GAME_OVER) return;
-    if (e.code == "ArrowUp") board = calculateBoard(board, "up");
-    else if (e.code == "ArrowDown") board = calculateBoard(board, "down"); 
-    else if (e.code == "ArrowLeft") board = calculateBoard(board, "left");
-    else if (e.code == "ArrowRight") board = calculateBoard(board, "right");
     
+    if (e.code == "ArrowUp") { 
+        e.preventDefault();
+        board = calculateBoard(board, "up");
+    } else if (e.code == "ArrowDown") { 
+        e.preventDefault();
+        board = calculateBoard(board, "down"); 
+    } else if (e.code == "ArrowLeft") { 
+        e.preventDefault();
+        board = calculateBoard(board, "left");
+    } else if (e.code == "ArrowRight") {
+        e.preventDefault();
+        board = calculateBoard(board, "right");
+    }  else return;
+    
+    if (GAME_OVER) return;
     board = addNew(board);
     if (isGameOver(board) == true) {  
         document.getElementById('game-over').style.zIndex = 10;

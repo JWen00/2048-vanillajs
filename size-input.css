@@ -15,7 +15,7 @@
     text-align: center;
 }
 
-#incrementBtn { 
+#increment-btn { 
     background-color: inherit;
     width: 0; 
     height: 0; 
@@ -29,7 +29,7 @@
 opacity : 0.7;
 }
 
-#decrementBtn { 
+#decrement-btn { 
     background-color: inherit;
     width: 0; 
     height: 0; 
@@ -38,6 +38,6 @@ opacity : 0.7;
     border-top: 10px solid #786E65;
 }
 
-#decrementBtn:hover { 
+#decrement-btn:hover { 
     opacity: 0.7;
 }
