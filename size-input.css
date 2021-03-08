@@ -1,0 +1,43 @@
+
+.custom-input { 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#input-board-size { 
+    background-color: inherit;
+    border: none; 
+    font-size: 30px; 
+    color: #786E65;
+    font-weight: bold;
+    width: 70px;
+    text-align: center;
+}
+
+#incrementBtn { 
+    background-color: inherit;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid #FAF8EF;
+    border-right: 10px solid #FAF8EF;
+    border-bottom: 10px solid #786E65;
+
+}
+
+#incrementBtn:hover { 
+opacity : 0.7;
+}
+
+#decrementBtn { 
+    background-color: inherit;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid #FAF8EF;
+    border-right: 10px solid #FAF8EF;
+    border-top: 10px solid #786E65;
+}
+
+#decrementBtn:hover { 
+    opacity: 0.7;
+}

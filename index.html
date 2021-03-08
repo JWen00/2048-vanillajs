@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <script src="size_input.js" defer></script>
+    <link rel="stylesheet" href="game-board.css">
+    <link rel="stylesheet" href="size-input.css">
+    <link rel="stylsheet" href="index.css">
+    <title>2048</title>
+</head>
+<body>
+   
+    <div class="container">
+        <div id="game-container">
+            <div id="game-over">
+                <p>Game Over</p>
+                <button id="restartBtn" onclick="restart()">Restart</button>    
+            </div>
+            <div id="game-board"></div>
+        </div>
+    </div>
+    <div class="selectBoardSize">
+        <div class="title">Set board size</div> 
+        <div class="custom-input">
+            <div id="incrementBtn" onclick="incrementBoardSize()"></div>
+            <input id="input-board-size"></input>
+            <div id="decrementBtn" onclick="decrementBoardSize()"></div>
+        </div>
+        
+
+    </div>
+</body>
+</html>
