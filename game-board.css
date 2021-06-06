@@ -1,5 +1,6 @@
 #game-container { 
     position: relative;
+    margin: 20px;
 }
 #game-board { 
     position:absolute; 

@@ -1,5 +1,5 @@
 var BOARD_SIZE = 4;
-var SQUARE_WIDTH = 55; 
+var SQUARE_WIDTH = 50; 
 var BORDER_WIDTH = 3;
 var GAME_OVER = false;
 
@@ -220,6 +220,28 @@ function createBoard() {
     } 
     return board;
 }
+function restart() { 
+    GAME_OVER = false;
+    board = createBoard();
+    renderBoard(board); 
+}
+
+function setBoardSize() {
+    let input = document.getElementById('input-board-size');
+    let new_size = Number(input.value); 
+    if (new_size > 20) { 
+        input.style.border = "1px solid red;"; 
+    }
+    document.getElementById('game-board').innerHTML = '';
+    BOARD_SIZE = new_size; 
+    generateHTML(); 
+    board = createBoard();
+    renderBoard(board); 
+}
+
+var board = createBoard();
+generateHTML();
+renderBoard(board);
 document.addEventListener('keydown', (e) => { 
     
     if (e.code == "ArrowUp") { 
@@ -244,12 +266,54 @@ document.addEventListener('keydown', (e) => {
     }
     renderBoard(board);
 })
-function restart(e) { 
-    GAME_OVER = false;
-    board = createBoard();
-    renderBoard(board); 
-}
 
-var board = createBoard();
-generateHTML();
-renderBoard(board);
+
+/* Adjust board size via input*/
+var input = document.getElementById('input-board-size');
+var decBtn = document.getElementById('decrement-btn');
+var incBtn = document.getElementById('increment-btn');
+var errMsg = document.getElementById('input-error-msg');
+var setBtn = document.getElementById('set-size-btn');
+var currValue = BOARD_SIZE;
+input.value = currValue;
+input.onchange = () => {
+    currValue = Number(input.value)
+    if (currValue > 30 || currValue < 3) { 
+        input.style.border = '1px solid red'
+        errMsg.style.display = 'block';
+        setBtn.disabled = true;
+        setBtn.style.opacity = 0.7;
+        console.log('disabled: ', setBtn.disabled);
+    } else { 
+        errMsg.style.display = 'none';
+        input.style.border = 'none';
+        setBtn.disabled = false;
+        setBtn.style.opacity = 1;
+
+
+    }
+}
+incBtn.addEventListener('click', () => {
+    if (currValue < 30) {
+        input.value = ++currValue;
+        console.log(currValue, input.value)
+        incBtn.style.opacity = 1;
+        decBtn.style.opacity = 1;
+    } 
+    
+    if (currValue === 30) { 
+        incBtn.style.opacity = 0.7;
+    }
+})
+decBtn.addEventListener('click', () => { 
+    if (currValue > 3) {
+        input.value = --currValue;
+        decBtn.style.opacity = 1;
+        incBtn.style.opacity = 1;
+    }
+    
+    if (currValue === 3) {
+        decBtn.style.opacity = 0.7;
+    }
+
+})

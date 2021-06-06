@@ -1,4 +1,26 @@
 
+/* Removing defalt arrows on number inputs */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.select-size-container {
+    text-align: center;
+}
+.arrow-btn { 
+    margin: 5px;
+}
+
+#input-error-msg { 
+    display: none;
+}
 .custom-input { 
     display: flex; 
     flex-direction: column;
@@ -10,7 +32,6 @@
     border: none; 
     font-size: 30px; 
     color: #786E65;
-    font-weight: bold;
     width: 70px;
     text-align: center;
 }
@@ -22,11 +43,10 @@
     border-left: 10px solid #FAF8EF;
     border-right: 10px solid #FAF8EF;
     border-bottom: 10px solid #786E65;
-
 }
 
-#incrementBtn:hover { 
-opacity : 0.7;
+#increment-btn:hover { 
+    opacity : 0.7;
 }
 
 #decrement-btn { 
@@ -39,5 +59,21 @@ opacity : 0.7;
 }
 
 #decrement-btn:hover { 
+    opacity: 0.7;
+}
+
+#set-size-btn { 
+    border: 2px solid #786E65;
+    border-radius: 10px;
+    background-color: inherit;
+    color: #786E65;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 10px;
+    min-width: 200px;
+    margin: 20px;
+}
+
+#set-size-btn:hover {
     opacity: 0.7;
 }

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="index.js" defer></script>
-    <script src="size_input.js" defer></script>
     <link rel="stylesheet" href="game-board.css">
     <link rel="stylesheet" href="size-input.css">
     <link rel="stylsheet" href="index.css">
@@ -29,22 +28,21 @@
     <title>2048</title>
 </head>
 <body>
-        <div id="game-container">
-            <div id="game-over">
-                <p>Game Over</p>
-                <button id="restartBtn" onclick="restart()">Restart</button>    
-            </div>
-            <div id="game-board"></div>
+    <div id="game-container">
+        <div id="game-over">
+            <p>Game Over</p>
+            <button id="restartBtn" onclick="restart()">Restart</button>    
         </div>
-    <div class="selectBoardSize">
-        <div class="title">Set board size</div> 
+        <div id="game-board"></div>
+    </div>
+    <div class="select-size-container">
         <div class="custom-input">
-            <div id="increment-btn" onclick="incrementBoardSize()"></div>
-            <input id="input-board-size"></input>
-            <div id="decrement-btn" onclick="decrementBoardSize()"></div>
+            <p id="input-error-msg">Please use a number between 4 and 30.</p>
+            <div class="arrow-btn" id="increment-btn"></div>
+            <input type="number" id="input-board-size"></input>
+            <div class="arrow-btn" id="decrement-btn"></div>
         </div>
-        
-
+        <button id="set-size-btn" onclick="setBoardSize()">Set board size</button>
     </div>
 </body>
 </html>
